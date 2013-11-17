@@ -11,7 +11,7 @@ var loadPatterns = function(pts) {
   // Handle per ad type
 
   // Images, iframes, scripts
-  $('img, iframe, script').each(function() {
+  $('img, iframe, script, embed').each(function() {
     var el = $(this);
     var parent = $(el.parent());
     console.log(this.src);
@@ -51,6 +51,8 @@ var loadPatterns = function(pts) {
       }
     });
   });
+
+  $('.banner_reg, #skinad, #otp_banner').remove();
 };
 
 loadPatterns(self.options.patterns);
