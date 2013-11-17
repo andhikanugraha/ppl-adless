@@ -34,5 +34,8 @@ function loadPatterns(pts) {
   })
 }
 
+self.port.on('loadPatterns', loadPatterns);
+self.port.emit('ready', true);
+
 });
 // Code that uses other library's $ can follow here.
