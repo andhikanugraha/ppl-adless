@@ -1,3 +1,3 @@
-# Adless
+# SusBlocker
 
-Adless is an AdBlock clone for a class assignment.
+SusBlocker is a minimalist AdBlock clone for a class assignment.
