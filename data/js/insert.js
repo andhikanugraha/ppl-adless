@@ -38,19 +38,19 @@ var loadPatterns = function(pts) {
   });
 
   // Links
-  $('a').each(function() {
-    var el = $(this);
-    var parent = $(el.parent());
+  // $('a').each(function() {
+  //   var el = $(this);
+  //   var parent = $(el.parent());
 
-    patterns.forEach(function(rx) {
-      if (rx.exec(el.prop('href'))) {
-        console.log('Found one: ' + rx.exec(el.prop('href')) );
-        el.remove();
-        if (parent.children().length == 0)
-          parent.remove();
-      }
-    });
-  });
+  //   patterns.forEach(function(rx) {
+  //     if (rx.exec(el.prop('href'))) {
+  //       console.log('Found one: ' + rx.exec(el.prop('href')) );
+  //       el.remove();
+  //       if (parent.children().length == 0)
+  //         parent.remove();
+  //     }
+  //   });
+  // });
 
   $('.banner_reg, #skinad, #otp_banner').remove();
 };
