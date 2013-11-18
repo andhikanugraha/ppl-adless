@@ -3,20 +3,53 @@
  
 <head>
     <style>
-      textarea {
+      body {
+        margin: 10px;
+      }
+      *, button, textarea, div, p {
         font: menu;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        height: 370px;
+      }
+      textarea {
+        height: 300px;
         width: 100%;
         margin: 0;
+        resize: none;
+      }
+      p {
+        margin: 0 0 5px;
+      }
+      .col {
+        float: left;
+        width: 50%;
+      }
+      .col.left {
+        padding-right: 5px;
+      }
+      .col.right {
+        padding-left: 5px;
+      }
+      .clear {
+        clear: both;
+      }
+      button {
+        width: 100%;
+        height: 30px;
       }
     </style>
   </head>
  
   <body>
-    <textarea cols="80" id="edit-box" noresize></textarea>
-    <button type="submit" id="save">Save</button>
+    <div class="col left">
+      <p>Filters:</p>
+      <p><textarea id="edit-box"></textarea></p>
+    </div>
+    <div class="col right">
+      <p>Sites:</p>
+      <p><textarea id="sites-box"></textarea></p>
+    </div>
+    <p class="clear"><button type="submit" id="save">Save</button></p>
   </body>
  
 </html>
