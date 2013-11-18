@@ -3,6 +3,9 @@
  
 <head>
     <style>
+      html {
+        -moz-user-select: none;
+      }
       body {
         margin: 10px;
       }
@@ -17,26 +20,55 @@
         margin: 0;
         resize: none;
       }
+      input[type=text] {
+        height: 30px;
+        width: 100%;
+      }
+      input[type=checkbox] {
+        margin: 0 5px 0 0;
+        vertical-align: -1px;
+      }
       p {
         margin: 0 0 5px;
+      }
+      .label {
+        height: 20px;
+        margin: 0;
+        -moz-user-select: none;
       }
       .col {
         float: left;
         width: 50%;
       }
+      .row {
+        clear: both;
+      }
       .col.left {
         padding-right: 5px;
       }
       .col.right {
+        float: right;
         padding-left: 5px;
       }
       .buttons {
-        clear: both;
         text-align: right;
+      }
+      .row.actions {
+        margin-top: 10px;
+      }
+      .row.actions label {
+        height: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+        cursor: pointer;
+        -moz-user-select: none;
       }
       button {
         width: 100px;
         height: 30px;
+      }
+      button:focus, input:focus {
+        outline: none;
       }
       #defaults {
         margin-left: 10px;
@@ -45,17 +77,29 @@
   </head>
  
   <body>
-    <div class="col left">
-      <p>Filters:</p>
-      <p><textarea id="edit-box"></textarea></p>
+    <div class="row">
+      <div class="col left">
+        <p class="label">URL Filters:</p>
+        <p><textarea id="edit-box"></textarea></p>
+      </div>
+      <div class="col right">
+        <p class="label">Element Filters:</p>
+        <p><textarea id="element-filters-box"></textarea></p>
+      </div>
     </div>
-    <div class="col right">
-      <p>Sites:</p>
-      <p><textarea id="sites-box"></textarea></p>
+    <div class="row">
+      <p class="label">Sites:</p>
+      <p><input type="text" id="sites-box"></input></p>
     </div>
-    <p class="buttons">
-      <button type="submit" id="save">Save</button><button type="submit" id="defaults">Defaults</button>
-    </p>
+    <div class="row actions">
+      <div class="col left">
+        <!-- <label><input type="checkbox" id="http">HTTP-based blocking (applies to all sites)</label> -->
+      </div>
+      </div>
+      <div class="col right buttons">
+        <button type="submit" id="save">Save</button><button type="submit" id="defaults">Defaults</button>
+      </div>
+    </div>
   </body>
  
 </html>
