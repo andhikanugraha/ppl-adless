@@ -8,6 +8,9 @@
     "Johannes Ridho <13510103@std.stei.itb.ac.id>",
     "Damiann Muhammad Mangan"
   ],
+  "permissions": {
+    "private-browsing": true
+  },
   "license": "MIT",
   "version": "0.1.2"
 }
