@@ -30,12 +30,16 @@
       .col.right {
         padding-left: 5px;
       }
-      .clear {
+      .buttons {
         clear: both;
+        text-align: right;
       }
       button {
-        width: 100%;
+        width: 100px;
         height: 30px;
+      }
+      #defaults {
+        margin-left: 10px;
       }
     </style>
   </head>
@@ -49,7 +53,9 @@
       <p>Sites:</p>
       <p><textarea id="sites-box"></textarea></p>
     </div>
-    <p class="clear"><button type="submit" id="save">Save</button></p>
+    <p class="buttons">
+      <button type="submit" id="save">Save</button><button type="submit" id="defaults">Defaults</button>
+    </p>
   </body>
  
 </html>
