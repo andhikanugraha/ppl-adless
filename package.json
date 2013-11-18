@@ -3,7 +3,11 @@
   "fullName": "SusBlocker",
   "id": "jid1-QSGldp2zlbyAFQ",
   "description": "A minimalist AdBlock clone.",
-  "author": "",
-  "license": "MPL 2.0",
-  "version": "0.1.1"
+  "contributors": [
+    "Andhika Nugraha <13510007@std.stei.itb.ac.id>",
+    "Johannes Ridho <13510103@std.stei.itb.ac.id>",
+    "Damiann Muhammad Mangan"
+  ],
+  "license": "MIT",
+  "version": "0.1.2"
 }

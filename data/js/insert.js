@@ -2,14 +2,14 @@ var loadPatterns = function(pts, els) {
   var patterns = [];
 
   var parseRule = function(string) {
-    console.log('before: ' + string);
+    // console.log('before: ' + string);
     string = string.replace(/([.+?^=!:${}()|\[\]\/\\])/g, "\\$1");
     string = string.replace(/[*]/g, '.*');
     string = string.replace(/^\|\|(.*)$/, '^$1$');
     string = string.replace(/^\|(.*)$/, '^$1');
     string = string.replace(/^(.*)\|$/, '$1$');
 
-    console.log('after: ' + string);
+    // console.log('after: ' + string);
 
     return new RegExp(string, 'i');
   }
@@ -18,8 +18,8 @@ var loadPatterns = function(pts, els) {
     patterns.push(parseRule(val));
   });
 
-  console.log(pts);
-  console.log(patterns);
+  // console.log(pts);
+  // console.log(patterns);
 
   // Handle per ad type
 
@@ -27,11 +27,11 @@ var loadPatterns = function(pts, els) {
   $('img, iframe, script, embed').each(function() {
     var el = $(this);
     var parent = $(el.parent());
-    console.log(this.src);
+    // console.log(this.src);
 
     patterns.forEach(function(rx) {
       if (rx.exec(el.prop('src'))) {
-        console.log('Found one: ' + rx.exec(el.prop('src')) );
+        // console.log('Found one: ' + rx.exec(el.prop('src')) );
         el.remove();
         if (parent.children().length == 0)
           parent.remove();
