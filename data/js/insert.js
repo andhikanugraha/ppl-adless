@@ -27,7 +27,9 @@ var loadPatterns = function(pts, els) {
     el.remove();
 
     parents.each(function() {
-      remove(this);
+      var p = $(this);
+      if (p.children().length == 0)
+        p.remove();
     });
   }
 
