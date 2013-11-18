@@ -21,20 +21,27 @@ var loadPatterns = function(pts, els) {
   // console.log(pts);
   // console.log(patterns);
 
+  var remove = function(elm) {
+    var el = $(elm);
+    var parents = el.parents();
+    el.remove();
+
+    parents.each(function() {
+      remove(this);
+    });
+  }
+
   // Handle per ad type
 
   // Images, iframes, scripts
   $('img, iframe, script, embed').each(function() {
     var el = $(this);
-    var parent = $(el.parent());
     // console.log(this.src);
 
     patterns.forEach(function(rx) {
       if (rx.exec(el.prop('src'))) {
         // console.log('Found one: ' + rx.exec(el.prop('src')) );
-        el.remove();
-        if (parent.children().length == 0)
-          parent.remove();
+        remove(el);
       }
     });
   });
@@ -51,7 +58,7 @@ var loadPatterns = function(pts, els) {
   });
 
   els.forEach(function(val) {
-    $(val).remove();
+    remove($(val));
   });
 };
 
